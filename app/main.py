@@ -52,7 +52,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.post("/subir")
+@app.post("/upload")
 async def subir_pdf(archivo: UploadFile, correo: str = Form(...)):
 
     """
