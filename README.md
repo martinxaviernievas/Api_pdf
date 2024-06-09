@@ -13,8 +13,8 @@ Este proyecto es una API RESTful desarrollada en Python utilizando FastAPI. La A
 
 1. Clonar el repositorio:
     ```sh
-    git clone https://github.com/tu_usuario/pdf_email_api.git
-    cd pdf_email_api
+    git clone https://github.com/martinxaviernievas/Api_pdf.git
+    cd Api_pdf
     ```
 
 2. Crear un entorno virtual y activarlo:
@@ -30,8 +30,13 @@ Este proyecto es una API RESTful desarrollada en Python utilizando FastAPI. La A
 
 ## Configuracion:
 
-1. En extractor_pdf.py
-   Modifica lo siguiente: 
+1. En enviar_email modificar lo siguiente:
+    remitente = "ejemplo@gmail.com o usuario de Mailtrap" #Cambiar por tu correo, sea el real o uno creado artificialmente
+    contrasena =  "contraseña de aplicacion o Pass de Mailtrap" # Cambiar por tu contraseña del correo electronico 
+    Tambien :
+        with smtplib.SMTP("smtp.mailtrap.io",2525) as servidor: # Ejemplo con Mailtrap
+        servidor.login("Usuario o email","Contraseña") # Ejemplo con Mailtrap
+ 
 
 ## Ejecución
 
