@@ -43,7 +43,14 @@ Este proyecto es una API RESTful desarrollada con FastAPI que permite recibir un
 
 2. La API estará disponible en `http://127.0.0.1:8000`.
 
+
 ## Uso de la API
+
+### Prueba rapida:
+
+1. Si queres hacer una prueba rapida la podes hacer atravez de la interfaz de Fastapi en `http://127.0.0.1:8000/docs`
+podes crear una cuenta rapida en Mailtrap que te proporcionara un host,usuario y contraseña para que modifiques en las partes indicadas en el codigo de enviar_email.pdf y siguiendo las pasos de la interfaz de Fastapi.
+
 
 ### Endpoint: `POST /upload`
 
@@ -69,4 +76,12 @@ Content-Type: multipart/form-data
     "file": <pdf-file>,
     "email": "example@example.com"
 }
+
+Respuesta esperada:
+
+{
+    "success": true,
+    "message": "El correo se ha enviado exitosamente a example@example.com" 
+}
+
 
