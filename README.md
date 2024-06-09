@@ -33,10 +33,11 @@ Este proyecto es una API RESTful desarrollada en Python utilizando FastAPI. La A
 ## Configuracion:
 
 
-1.  En enviar_email.py modificar lo siguiente:
+1. En enviar_email.py modificar lo siguiente:
 
    remitente = "ejemplo@gmail.com o usuario de Mailtrap" 
    contrasena =  "contraseña de aplicacion o Pass de Mailtrap" 
+   Tambien:
    with smtplib.SMTP("smtp.mailtrap.io",2525) as servidor: # Ejemplo con Mailtrap
    servidor.login("Usuario o email","Contraseña") # Ejemplo con Mailtrap
  
@@ -55,8 +56,8 @@ Este proyecto es una API RESTful desarrollada en Python utilizando FastAPI. La A
     Este endpoint permite subir un archivo PDF y enviar el contenido extraído por correo electrónico.
 
 ## Parámetros
-    Archivo: Archivo PDF a subir.
-    Correo: Dirección de correo electrónico para enviar el contenido.
+    archivo: Archivo PDF a subir.
+    correo: Dirección de correo electrónico para enviar el contenido.
 
 ### Ejemplo de Solicitud
 ```http
