@@ -34,10 +34,9 @@ Este proyecto es una API RESTful desarrollada en Python utilizando FastAPI. La A
 
 
 1. En enviar_email.py modificar lo siguiente:
-
    remitente = "ejemplo@gmail.com o usuario de Mailtrap" 
    contrasena =  "contraseña de aplicacion o Pass de Mailtrap" 
-   Tambien:
+2. Tambien:
    with smtplib.SMTP("smtp.mailtrap.io",2525) as servidor: # Ejemplo con Mailtrap
    servidor.login("Usuario o email","Contraseña") # Ejemplo con Mailtrap
  
