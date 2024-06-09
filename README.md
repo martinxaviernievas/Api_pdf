@@ -28,6 +28,11 @@ Este proyecto es una API RESTful desarrollada en Python utilizando FastAPI. La A
     pip install -r requirements.txt
     ```
 
+## Configuracion:
+
+1. En extractor_pdf.py
+   Modifica lo siguiente: 
+
 ## Ejecución
 
 1. Iniciar el servidor:
@@ -35,11 +40,13 @@ Este proyecto es una API RESTful desarrollada en Python utilizando FastAPI. La A
     uvicorn app.main:app --reload
     ```
 
-2. La API estará disponible en `http://127.0.0.1:8000`.
+2. La API estará disponible en `http://127.0.0.1:8000/docs`.
 
 ## Uso
 
 Enviar una solicitud `POST` a `/upload` con un archivo PDF y un email:
+En donde dice Try Out ingrese: El PDF que desee
+ingrese el mail del remitente ( Te recomiendo Mailtrap)
 
 ### Ejemplo de Solicitud
 ```http

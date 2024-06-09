@@ -18,10 +18,11 @@ app.add_middleware(
 
 @app.post("/subir")
 async def subir_pdf(archivo: UploadFile, correo: str = Form(...)):
+
     """
     Carga un archivo PDF, extrae las primeras 30 lineas de texto y envia el contenido por correo electronico
-    parametro del archivo : Archivo PDF cargado
-    parametro correo : Direccion de correo electronico para enviar el contenido.
+    :param del archivo : Archivo PDF cargado
+    :param correo : Direccion de correo electronico para enviar el contenido.
     return: JSONResponse indicando el exito de la operacion.
     """
 
