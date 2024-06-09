@@ -83,5 +83,24 @@ Respuesta esperada:
     "success": true,
     "message": "El correo se ha enviado exitosamente a example@example.com" 
 }
+```
 
+# Detalles de los Endpoints
 
+## POST /upload
+
+**Descripción**: Carga un archivo PDF, extrae las primeras 30 líneas de texto y envía el contenido por correo electrónico.
+
+**Parámetros**:
+- `archivo` (form-data, requerido): El archivo PDF a subir.
+- `correo` (form-data, requerido): La dirección de correo electrónico a la que se enviará el contenido extraído.
+
+**Respuestas**:
+- `200 OK`: Éxito. El correo se ha enviado correctamente.
+- `400 Bad Request`: Error. El archivo no es un PDF.
+- `500 Internal Server Error`: Error al extraer el texto o al enviar el correo.
+
+## Notas
+
+- **Correo Electrónico**: Para pruebas de envío de correo, se recomienda usar Mailtrap o una configuración SMTP similar.
+- **Seguridad**: Asegúrate de manejar correctamente las credenciales y la información sensible en un entorno de producción.
