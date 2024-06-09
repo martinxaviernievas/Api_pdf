@@ -1,69 +1,72 @@
 # PDF Email API
 
-## Descripción
-Este proyecto es una API RESTful desarrollada en Python utilizando FastAPI. La API permite recibir un archivo PDF, extraer las primeras 30 líneas de contenido y enviar ese contenido a una dirección de correo electrónico proporcionada.
+# FastAPI PDF Extractor
 
+Este proyecto es una API RESTful desarrollada con FastAPI que permite recibir un archivo PDF, extraer las primeras 30 líneas de texto y enviar este contenido a una dirección de correo electrónico proporcionada.
 
 ## Requisitos
-- Python 3.8+
-- FastAPI
-- Uvicorn
-- PyPDF2
 
+- Python 3.8 o superior
+- FastAPI
+- PyPDF2
+- Mailtrap (opcional para pruebas de envío de correo)
 
 ## Instalación
 
-1. Clonar el repositorio:
-    ```sh
+1. Clona el repositorio:
+
+    ```bash
     git clone https://github.com/martinxaviernievas/Api_pdf.git
     cd Api_pdf
     ```
 
-2. Crear un entorno virtual y activarlo:
-    ```sh
+2. Crea y activa un entorno virtual:
+
+    ```bash
     python -m venv venv
-    source venv/bin/activate  # En Windows: venv\Scripts\activate
+    source venv/bin/activate # En Windows: venv\Scripts\activate
     ```
 
-3. Instalar las dependencias:
-    ```sh
+3. Instala las dependencias:
+
+    ```bash
     pip install -r requirements.txt
     ```
 
-## Configuracion:
-
-
-1. En enviar_email.py modificar lo siguiente:
-   remitente = "ejemplo@gmail.com o usuario de Mailtrap" 
-   contrasena =  "contraseña de aplicacion o Pass de Mailtrap" 
-2. Tambien:
-   with smtplib.SMTP("smtp.mailtrap.io",2525) as servidor: # Ejemplo con Mailtrap
-   servidor.login("Usuario o email","Contraseña") # Ejemplo con Mailtrap
- 
-
 ## Ejecución
 
-1. Iniciar el servidor:
-    ```sh
-    uvicorn app.main:app --reload
+1. Inicia la aplicación FastAPI:
+
+    ```bash
+    uvicorn main:app --reload
     ```
 
-2. Prueba de forma rapida a la interfaz de FastApi a esta direcion : http://127.0.0.1:8000/docs
+2. La API estará disponible en `http://127.0.0.1:8000`.
 
+## Uso de la API
 
-## Endpoint: /upload
-    Este endpoint permite subir un archivo PDF y enviar el contenido extraído por correo electrónico.
+### Endpoint: `POST /upload`
 
-## Parámetros
-    archivo: Archivo PDF a subir.
-    correo: Dirección de correo electrónico para enviar el contenido.
+Este endpoint permite subir un archivo PDF, extraer las primeras 30 líneas y enviar el contenido a un correo electrónico.
 
-### Ejemplo de Solicitud
+#### Solicitud
+
+- **URL**: `http://127.0.0.1:8000/upload`
+- **Método**: `POST`
+- **Encabezados**: `Content-Type: multipart/form-data`
+- **Cuerpo**:
+    - `archivo`: El archivo PDF a subir.
+    - `email`: La dirección de correo electrónico a la que se enviará el contenido extraído.
+
+#### Ejemplo de solicitud
+
 ```http
-POST /upload
+POST /upload HTTP/1.1
+Host: 127.0.0.1:8000
 Content-Type: multipart/form-data
 
 {
     "file": <pdf-file>,
     "email": "example@example.com"
 }
+
