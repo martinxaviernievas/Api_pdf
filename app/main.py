@@ -1,6 +1,7 @@
 from fastapi import FastAPI, UploadFile, Form, HTTPException
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
+from app.extractor_pdf import extraer_primeras_30_lineas
 from app.enviar_email import enviar_email
 
 
@@ -9,7 +10,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"]
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -29,7 +30,7 @@ async def subir_pdf(archivo: UploadFile, correo: str = Form(...)):
 
     contenido = await archivo.read()
     try:
-        texto_extraido = extraer_primero_30_lineas(contenido)
+        texto_extraido = extraer_primeras_30_lineas(contenido)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error al extraer texto del PDF: {str(e)}")
     
