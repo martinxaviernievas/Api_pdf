@@ -48,8 +48,9 @@ Este proyecto es una API RESTful desarrollada con FastAPI que permite recibir un
 
 ### Prueba rapida:
 
-1. Si queres hacer una prueba rapida la podes hacer atravez de la interfaz de Fastapi en `http://127.0.0.1:8000/docs`
-podes crear una cuenta rapida en Mailtrap que te proporcionara un host,usuario y contraseña para que modifiques en las partes indicadas en el codigo de enviar_email.pdf y siguiendo las pasos de la interfaz de Fastapi.
+1. Si queres hacer una prueba rapida la podes hacer a travez de la interfaz de Fastapi en `http://127.0.0.1:8000/docs`.
+
+2. Podes crear una cuenta rapida en Mailtrap que te proporcionara un host,usuario y contraseña para que modifiques en las partes indicadas en el codigo de enviar_email.pdf y siguiendo las pasos de la interfaz de Fastapi.
 
 
 ### Endpoint: `POST /upload`
